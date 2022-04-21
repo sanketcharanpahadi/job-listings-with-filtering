@@ -11,7 +11,8 @@ const addCards = async function () {
 
 function showCards(Array) {
   Array.map(function (ele) {
-    const jobEl = `<div class="job">
+    const jobEl = `<div class="job upper-class-name">
+    <div class = "upper">
       <img src="${ele.logo}" alt="" class="company-img" />
       <div class="company flex">
         <span class="company-name">${ele.company}</span>
@@ -25,6 +26,7 @@ function showCards(Array) {
         <span class="posted">${ele.postedAt}</span>
         <span class="contract">${ele.contract}</span>
         <span class="location">${ele.location}</span>
+      </div>
       </div>
 
       <hr />
@@ -41,6 +43,11 @@ function showCards(Array) {
     spanEle(ele.languages, tags);
     toolEle(ele.tools, tags);
   });
+
+  const newEl = document.querySelectorAll(".new");
+  const featureEl = document.querySelectorAll(".featured");
+  remove(newEl);
+  remove(featureEl);
 }
 
 function spanEle(arr, tags) {
@@ -65,6 +72,14 @@ function toolEle(arr, tags) {
 function levelEl(ele, tags) {
   const span = `<span>${ele}</span>`;
   tags.insertAdjacentHTML("beforeend", span);
+}
+
+function remove(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].textContent === "") {
+      arr[i].style.background = "white";
+    }
+  }
 }
 
 addCards();

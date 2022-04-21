@@ -12,6 +12,7 @@
   --color-neutral-two: hsl(180, 31%, 95%);
   --color-neutral-three: hsl(180, 8%, 52%);
   --color-neutral-four: hsl(180, 14%, 20%);
+  border-radius: 50%;
 }
 
 html {
@@ -123,6 +124,25 @@ hr {
   border-radius: 0.3rem;
 }
 
+.location,
+.contract {
+  position: relative;
+}
+
+.location::before,
+.contract::before {
+  display: block;
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: var(--color-neutral-four);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15%;
+  border-radius: 50%;
+}
+
 /* UTILITIES */
 
 .flex {
@@ -136,4 +156,41 @@ hr {
 
 .wrap {
   flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  hr {
+    display: none;
+  }
+
+  .company-img {
+    width: 85px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3%;
+  }
+
+  .job {
+    padding-left: 14rem;
+    padding-right: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .company {
+    font-size: 1.5rem;
+  }
+
+  .role {
+    font-size: 1.8rem;
+  }
+
+  .job-listing {
+    font-size: 1.5rem;
+  }
+
+  .upper-class-name {
+    display: flex;
+    justify-content: space-between;
+  }
 }
