@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: hsl(180, 29%, 50%);
+  --color-neutral-one: hsl(180, 52%, 96%);
+  --color-neutral-two: hsl(180, 31%, 95%);
+  --color-neutral-three: hsl(180, 8%, 52%);
+  --color-neutral-four: hsl(180, 14%, 20%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.5rem;
+  max-width: 1440px;
+  background: var(--color-neutral-one);
+}
+
+.header {
+  background-image: url(images/bg-header-mobile.svg);
+  height: 20vh;
+  background-color: var(--color-primary);
+  background-size: 100%;
+  margin-bottom: 4rem;
+}
+
+.jobs {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.job {
+  background: white;
+}
