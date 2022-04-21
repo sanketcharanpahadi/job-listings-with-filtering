@@ -13,23 +13,23 @@ function showCards(Array) {
   Array.map(function (ele) {
     const jobEl = `<div class="job">
       <img src="${ele.logo}" alt="" class="company-img" />
-      <div class="company">
+      <div class="company flex">
         <span class="company-name">${ele.company}</span>
-        <span class="new">${ele.new === true ? "new" : "false"}</span>
+        <span class="new">${ele.new === true ? "new!" : ""}</span>
         <span class="featured">${ele.featured === true ? "featured" : ""}</span>
       </div>
 
-      <h1>${ele.position}</h1>
+      <h1 class="role">${ele.position}</h1>
 
-      <div class="job-listing">
-        <span>${ele.postedAt}</span>
-        <span>${ele.contract}</span>
-        <span>${ele.location}</span>
+      <div class="job-listing flex">
+        <span class="posted">${ele.postedAt}</span>
+        <span class="contract">${ele.contract}</span>
+        <span class="location">${ele.location}</span>
       </div>
 
       <hr />
 
-      <div class="tags-${ele.id}">
+      <div class="tags-${ele.id} tags flex">
         
       </div>
 

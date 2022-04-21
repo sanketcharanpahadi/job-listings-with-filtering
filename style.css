@@ -34,10 +34,106 @@ body {
 }
 
 .jobs {
-  max-width: 80%;
+  max-width: 88%;
   margin: 0 auto;
 }
 
 .job {
   background: white;
+  border-radius: 0.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 1rem 1rem 1rem hsla(180, 29%, 50%, 0.15);
+}
+
+.company-img {
+  position: absolute;
+  width: 50px;
+  top: -2rem;
+  left: 5%;
+}
+.company {
+  margin: 2.5rem 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  gap: 1rem;
+}
+
+.company-name {
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.new {
+  background: var(--color-primary);
+  color: var(--color-neutral-one);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured {
+  background: black;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: var(--color-neutral-four);
+  margin-bottom: 1.5rem;
+}
+
+.job-listing {
+  gap: 2rem;
+  color: var(--color-neutral-three);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.location {
+  position: relative;
+}
+
+hr {
+  margin-bottom: 1.5rem;
+  color: var(--color-neutral-one);
+}
+
+.tags {
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.tags span {
+  background: hsla(180, 29%, 50%, 0.1);
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+}
+
+/* UTILITIES */
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.wrap {
+  flex-wrap: wrap;
 }
