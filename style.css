@@ -33,7 +33,47 @@ body {
   background-position: center center;
   background-color: var(--color-ptimary);
   background-size: cover;
-  margin-bottom: 6rem;
+  margin-bottom: 12rem;
+  position: relative;
+}
+
+.filters {
+  width: 90%;
+  min-height: 12vh;
+  background-color: white;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.filter span {
+  background-color: var(--color-tablet);
+  color: var(--color-ptimary);
+  padding: 0.5rem;
+}
+
+.filter img {
+  background-color: var(--color-ptimary);
+  padding: 0.6rem;
+  cursor: pointer;
+}
+
+.clear {
+  position: absolute;
+  right: 1.5rem;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .about-job {
@@ -126,4 +166,5 @@ body {
   background-color: var(--color-tablet);
   border-radius: 0.3rem;
   font-size: 1.7rem;
+  cursor: pointer;
 }
