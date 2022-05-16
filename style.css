@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-ptimary: hsl(180, 29%, 50%);
+  --color-background: hsl(180, 52%, 96%);
+  --color-tablet: hsl(180, 31%, 95%);
+  --color-dark-cyan: hsl(180, 8%, 52%);
+  --color-gray-cyan: hsl(180, 14%, 20%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.5rem;
+  background-color: var(--color-background);
+}
+
+.header {
+  height: 25vh;
+  background-image: url(images/bg-header-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: var(--color-ptimary);
+  background-size: cover;
+  margin-bottom: 6rem;
+}
+
+.about-job {
+  border-bottom: 1px solid var(--color-ptimary);
+}
+
+.jobs {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.job {
+  background-color: #fff;
+  padding: 2.5rem 2rem;
+  border-left: 0.5rem solid var(--color-ptimary);
+  position: relative;
+  box-shadow: 5px 5px 10px 5px hsla(180, 29%, 50%, 0.2);
+  border-radius: 0.5rem;
+  margin-bottom: 4.6rem;
+}
+
+.company-img {
+  position: absolute;
+  width: 5rem;
+  top: -3rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.company-name {
+  display: flex;
+  margin-top: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.company-name h3 {
+  color: var(--color-ptimary);
+  margin-right: 2rem;
+  font-size: inherit;
+}
+
+.new {
+  color: #fff;
+  background-color: var(--color-ptimary);
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+}
+
+.featured {
+  color: #fff;
+  background-color: #000;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+}
+
+.new {
+  margin-right: 1rem;
+}
+
+.role {
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.timing {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 1.8rem;
+}
+
+.timing span {
+  color: var(--color-dark-cyan);
+}
+
+.job-tags {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+.job-tags .tag {
+  background-color: var(--color-ptimary);
+  color: var(--color-ptimary);
+  padding: 0.5rem 0.9rem;
+  font-weight: bold;
+  background-color: var(--color-tablet);
+  border-radius: 0.3rem;
+  font-size: 1.7rem;
+}
