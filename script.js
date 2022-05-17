@@ -1,49 +1,24 @@
-const jobs = document.querySelector(".jobs");
-let clearEl;
-let removeEl;
-let domArray;
+const jobsEl = document.querySelector(".jobs");
+let jobArray = [];
 
-window.onload = function () {
-  getData();
-};
-
-const getData = async function () {
+// fetching data from data.json
+const getJsonData = async function () {
   const response = await fetch("./data.json");
-  const data = await response.json();
-  domArray = [...data];
-  showJobs(domArray);
+  jobArray = await response.json();
+  console.log(jobArray);
 
-  const jobTags = document.querySelectorAll(".job-tags");
-  [...jobTags].forEach((item) => {
-    item.addEventListener("click", function (e) {
-      const target = e.target;
-      if (target.classList.contains("tag")) {
-        addToFilter(target.textContent);
-      }
-    });
-  });
-
-  for (let i = 0; i < data.length; i++) {
-    addTags([...data[i].languages, ...data[i].tools], i);
-  }
-
-  const newEl = document.querySelectorAll(".new");
-  const featuredEl = document.querySelectorAll(".featured");
-  removeNew([...newEl]);
-  removeNew([...featuredEl]);
+  populateDOM(jobArray);
 };
 
-const showJobs = function (array) {
+// adding job cards to the dom
+function addToDom(array) {
   array.forEach((item) => {
-    const jobEl = ` <div class="job" id=${item.id}>
+    const jobEL = `<div class="job" id=${item.id}>
         <div class="about-job">
           <img src=${item.logo} class="company-img" alt="" />
-          <div class="company-name">
+          <div class="company-name company-name-${item.id}">
             <h3>${item.company}</h3>
-            <span class="new">${item.new == true ? "NEW" : ""}</span>
-            <span class="featured">${
-              item.featured == true ? "FEATURED" : ""
-            }</span>
+            
           </div>
           <h3 class="role">${item.position}</h3>
           <div class="timing">
@@ -57,51 +32,31 @@ const showJobs = function (array) {
         <span class="tag">${item.level}</span>
         </div>
       </div>`;
-    jobs.insertAdjacentHTML("beforeend", jobEl);
-  });
-};
-
-function addTags(array, i) {
-  const tags = document.querySelector(`.job-tags-${i + 1}`);
-  array.forEach((item) => {
-    const tagEl = `<span class="tag">${item}</span>`;
-    tags.insertAdjacentHTML("beforeend", tagEl);
+    jobsEl.insertAdjacentHTML("beforeend", jobEL);
   });
 }
 
-function removeNew(arr) {
-  arr.forEach((item) => {
-    if (item.textContent.trim() == "") {
-      item.style.backgroundColor = "#fff";
+getJsonData();
+
+// adding new and featured tag
+function addNewFeatured(array) {
+  array.forEach((item) => {
+    const companyName = document.querySelector(`.company-name-${item.id}`);
+    if (item.new) {
+      const newEl = `<span class="new">NEW</span>`;
+      companyName.insertAdjacentHTML("beforeend", newEl);
+    }
+    if (item.featured) {
+      const featuredEl = `<span class="featured">FEATURED</span>`;
+      companyName.insertAdjacentHTML("beforeend", featuredEl);
     }
   });
 }
 
-function addToFilter(text) {
-  const filtersEl = document.querySelector(".filters");
-  const filterEl = `<div class="filter">
-    <span>${text}</span>
-    <img src="images/icon-remove.svg" class="remove" alt="" />
-  </div>`;
-  filtersEl.insertAdjacentHTML("beforeend", filterEl);
+function addTags(array) {}
 
-  clearEl = document.querySelector(".clear");
-  clearEl.addEventListener("click", function () {
-    clearFilters();
-  });
-
-  removeEl = document.querySelectorAll(".remove");
-  removeElement([...removeEl]);
-}
-
-function clearFilters() {
-  document.querySelector(".filters").innerHTML = "";
-}
-
-function removeElement(arr) {
-  arr.forEach((item) => {
-    item.addEventListener("click", function () {
-      item.parentElement.remove();
-    });
-  });
+// calling all the functions together
+function populateDOM(array) {
+  addToDom(array);
+  addNewFeatured(array);
 }
