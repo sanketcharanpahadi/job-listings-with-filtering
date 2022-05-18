@@ -45,7 +45,6 @@ body {
   top: 75%;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
   padding: 2rem 4rem 2rem 4.1rem;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -220,11 +219,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 4rem;
-    padding-top: 2.5rem;
-    padding-left: 14rem;
     margin-bottom: 2.5rem;
-    box-shadow: none;
+    box-shadow: 0 5px 10px 5px hsla(180, 29%, 50%, 0.2);
+    padding: 2.5rem 4rem 3rem 14rem;
   }
 
   .company-img {
